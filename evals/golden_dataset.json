@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "input": "My credit card was charged twice for the same order.",
+    "expected": "Billing"
+  },
+  {
+    "id": 2,
+    "input": "I was charged more than I should have been.",
+    "expected": "Billing"
+  },
+  {
+    "id": 3,
+    "input": "Can you explain this charge on my invoice?",
+    "expected": "Billing"
+  },
+  {
+    "id": 4,
+    "input": "I need a refund for a payment I made.",
+    "expected": "Billing"
+  },
+  {
+    "id": 5,
+    "input": "Why was I charged an extra fee?",
+    "expected": "Billing"
+  },
+
+  {
+    "id": 6,
+    "input": "The application crashes whenever I try to log in.",
+    "expected": "Technical"
+  },
+  {
+    "id": 7,
+    "input": "The website is showing an error message.",
+    "expected": "Technical"
+  },
+  {
+    "id": 8,
+    "input": "The app is not loading on my phone.",
+    "expected": "Technical"
+  },
+  {
+    "id": 9,
+    "input": "I cannot reset my password because the link is broken.",
+    "expected": "Technical"
+  },
+  {
+    "id": 10,
+    "input": "The system keeps freezing when I open it.",
+    "expected": "Technical"
+  },
+
+  {
+    "id": 11,
+    "input": "My package has not arrived yet.",
+    "expected": "Delivery"
+  },
+  {
+    "id": 12,
+    "input": "Can you tell me where my shipment is?",
+    "expected": "Delivery"
+  },
+  {
+    "id": 13,
+    "input": "My order is delayed.",
+    "expected": "Delivery"
+  },
+  {
+    "id": 14,
+    "input": "When will my package be delivered?",
+    "expected": "Delivery"
+  },
+  {
+    "id": 15,
+    "input": "The tracking information has not been updated.",
+    "expected": "Delivery"
+  },
+
+  {
+    "id": 16,
+    "input": "I want to change the email address on my account.",
+    "expected": "Account"
+  },
+  {
+    "id": 17,
+    "input": "How can I update my profile information?",
+    "expected": "Account"
+  },
+  {
+    "id": 18,
+    "input": "I cannot access my account.",
+    "expected": "Account"
+  },
+  {
+    "id": 19,
+    "input": "Please help me change my account details.",
+    "expected": "Account"
+  },
+  {
+    "id": 20,
+    "input": "I forgot my account username.",
+    "expected": "Account"
+  }
+]
