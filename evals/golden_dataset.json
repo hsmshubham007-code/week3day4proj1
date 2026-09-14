@@ -2,104 +2,601 @@
   {
     "id": 1,
     "input": "My credit card was charged twice for the same order.",
-    "expected": "Billing"
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 2,
     "input": "I was charged more than I should have been.",
-    "expected": "Billing"
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 3,
     "input": "Can you explain this charge on my invoice?",
-    "expected": "Billing"
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 4,
     "input": "I need a refund for a payment I made.",
-    "expected": "Billing"
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 5,
     "input": "Why was I charged an extra fee?",
-    "expected": "Billing"
+    "expected": "Billing",
+    "query_type": "Billing"
   },
-
   {
     "id": 6,
-    "input": "The application crashes whenever I try to log in.",
-    "expected": "Technical"
+    "input": "My monthly subscription payment looks incorrect.",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 7,
-    "input": "The website is showing an error message.",
-    "expected": "Technical"
+    "input": "I don't recognize this payment on my account.",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 8,
-    "input": "The app is not loading on my phone.",
-    "expected": "Technical"
+    "input": "Why did I receive two invoices for one purchase?",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 9,
-    "input": "I cannot reset my password because the link is broken.",
-    "expected": "Technical"
+    "input": "My refund has not appeared yet.",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 10,
-    "input": "The system keeps freezing when I open it.",
-    "expected": "Technical"
+    "input": "The amount on my invoice is wrong.",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
-
   {
     "id": 11,
-    "input": "My package has not arrived yet.",
-    "expected": "Delivery"
+    "input": "I was billed after I cancelled my subscription.",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 12,
-    "input": "Can you tell me where my shipment is?",
-    "expected": "Delivery"
+    "input": "How can I get a copy of my invoice?",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 13,
-    "input": "My order is delayed.",
-    "expected": "Delivery"
+    "input": "Why is there an unexpected fee on my bill?",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 14,
-    "input": "When will my package be delivered?",
-    "expected": "Delivery"
+    "input": "My payment was taken but my order was not completed.",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 15,
-    "input": "The tracking information has not been updated.",
-    "expected": "Delivery"
+    "input": "Can you tell me when my refund will arrive?",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
-
   {
     "id": 16,
-    "input": "I want to change the email address on my account.",
-    "expected": "Account"
+    "input": "The charge on my card is different from the order total.",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 17,
-    "input": "How can I update my profile information?",
-    "expected": "Account"
+    "input": "I need help understanding my latest bill.",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 18,
-    "input": "I cannot access my account.",
-    "expected": "Account"
+    "input": "Why did my payment fail?",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 19,
-    "input": "Please help me change my account details.",
-    "expected": "Account"
+    "input": "I was charged a service fee that I did not expect.",
+    "expected": "Billing",
+    "query_type": "Billing"
   },
   {
     "id": 20,
+    "input": "Can I get a refund for this transaction?",
+    "expected": "Billing",
+    "query_type": "Billing"
+  },
+  {
+    "id": 21,
+    "input": "My card payment was declined.",
+    "expected": "Billing",
+    "query_type": "Billing"
+  },
+  {
+    "id": 22,
+    "input": "The billing amount changed unexpectedly.",
+    "expected": "Billing",
+    "query_type": "Billing"
+  },
+  {
+    "id": 23,
+    "input": "I have a question about a charge from last month.",
+    "expected": "Billing",
+    "query_type": "Billing"
+  },
+  {
+    "id": 24,
+    "input": "Why has my refund not been processed?",
+    "expected": "Billing",
+    "query_type": "Billing"
+  },
+  {
+    "id": 25,
+    "input": "Please help me with my payment receipt.",
+    "expected": "Billing",
+    "query_type": "Billing"
+  },
+  {
+    "id": 26,
+    "input": "The application crashes whenever I try to log in.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 27,
+    "input": "The website is showing an error message.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 28,
+    "input": "The app is not loading on my phone.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 29,
+    "input": "I cannot reset my password because the link is broken.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 30,
+    "input": "The system keeps freezing when I open it.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 31,
+    "input": "The mobile application stopped working this morning.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 32,
+    "input": "I keep getting an error when I submit the form.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 33,
+    "input": "The website will not load for me.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 34,
+    "input": "The app closes whenever I open the settings page.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 35,
+    "input": "I cannot log in because the application keeps failing.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 36,
+    "input": "The page is stuck and will not finish loading.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 37,
+    "input": "I received an unexpected error while using the website.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 38,
+    "input": "The application becomes unresponsive after I sign in.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 39,
+    "input": "The login page is broken.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 40,
+    "input": "My app keeps freezing when I try to use it.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 41,
+    "input": "The website is displaying a system error.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 42,
+    "input": "I cannot get the application to start.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 43,
+    "input": "The reset link does not work.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 44,
+    "input": "The site keeps timing out when I try to access it.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 45,
+    "input": "The application is showing a blank screen.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 46,
+    "input": "I am unable to open the website on my computer.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 47,
+    "input": "The app stopped responding after the latest update.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 48,
+    "input": "I get an error every time I try to save my changes.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 49,
+    "input": "The system is not working correctly today.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 50,
+    "input": "The login screen keeps crashing.",
+    "expected": "Technical",
+    "query_type": "Technical"
+  },
+  {
+    "id": 51,
+    "input": "My package has not arrived yet.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 52,
+    "input": "Can you tell me where my shipment is?",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 53,
+    "input": "My order is delayed.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 54,
+    "input": "When will my package be delivered?",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 55,
+    "input": "The tracking information has not been updated.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 56,
+    "input": "My shipment is taking longer than expected.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 57,
+    "input": "Where can I find my tracking number?",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 58,
+    "input": "The package says delivered but I cannot find it.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 59,
+    "input": "Can you tell me the expected delivery date?",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 60,
+    "input": "My order has been stuck in shipping.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 61,
+    "input": "Why has my package not shipped yet?",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 62,
+    "input": "The tracking status has not changed for several days.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 63,
+    "input": "My shipment appears to be delayed.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 64,
+    "input": "When should I expect my order to arrive?",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 65,
+    "input": "I have not received my package.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 66,
+    "input": "The delivery is later than the promised date.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 67,
+    "input": "My tracking number is not showing any updates.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 68,
+    "input": "Where is my order right now?",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 69,
+    "input": "The courier has not delivered my package.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 70,
+    "input": "Can I get an update on my shipment?",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 71,
+    "input": "My delivery has been delayed again.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 72,
+    "input": "The package is still in transit.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 73,
+    "input": "I need help tracking my order.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 74,
+    "input": "Why is my delivery taking so long?",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 75,
+    "input": "Please check the status of my package.",
+    "expected": "Delivery",
+    "query_type": "Delivery"
+  },
+  {
+    "id": 76,
+    "input": "I want to change the email address on my account.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 77,
+    "input": "How can I update my profile information?",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 78,
+    "input": "I cannot access my account.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 79,
+    "input": "Please help me change my account details.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 80,
     "input": "I forgot my account username.",
-    "expected": "Account"
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 81,
+    "input": "How do I change my profile name?",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 82,
+    "input": "I need to update the information on my account.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 83,
+    "input": "How can I change my account email?",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 84,
+    "input": "I cannot remember my username.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 85,
+    "input": "Where can I edit my profile details?",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 86,
+    "input": "I need to change some account settings.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 87,
+    "input": "My account information needs to be updated.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 88,
+    "input": "How do I modify my profile?",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 89,
+    "input": "I want to update the email linked to my account.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 90,
+    "input": "I cannot get into my account.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 91,
+    "input": "Can I change my username?",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 92,
+    "input": "Please help me update my profile.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 93,
+    "input": "I need to edit my account information.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 94,
+    "input": "How can I change my account preferences?",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 95,
+    "input": "My username is incorrect and needs to be changed.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 96,
+    "input": "I want to update my account details.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 97,
+    "input": "Where do I change my profile information?",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 98,
+    "input": "I need to change the email associated with my profile.",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 99,
+    "input": "How can I manage my account settings?",
+    "expected": "Account",
+    "query_type": "Account"
+  },
+  {
+    "id": 100,
+    "input": "Please help me regain access to my account.",
+    "expected": "Account",
+    "query_type": "Account"
   }
 ]

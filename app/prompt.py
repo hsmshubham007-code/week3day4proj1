@@ -1,56 +1,73 @@
-SYSTEM_PROMPT = """
-You are a customer support classifier.
+"""
+Prompt and deterministic customer-message classifier.
 
-Classify each customer message into exactly ONE of these categories:
+This classifier simulates an LLM prompt for the evaluation project.
+It is deterministic so the evaluation suite can run reliably in
+local development and GitHub Actions without API costs.
+"""
+
+import re
+
+
+SYSTEM_PROMPT = """
+You are a customer-support message classifier.
+
+Classify each customer message into exactly one of these categories:
 
 - Billing
 - Technical
 - Delivery
 - Account
 
-Rules:
-
-1. Billing:
-   Questions about charges, payments, invoices, refunds, or fees.
-
-2. Technical:
-   Problems with applications, websites, errors, crashes, login failures,
-   or system functionality.
-
-3. Delivery:
-   Questions about shipments, packages, tracking, delays, or delivery dates.
-
-4. Account:
-   Questions about account information, profile details, usernames,
-   or changing account settings.
-
-Return ONLY the category name.
-Do not provide explanations.
+Return only the category name.
 """
+
+
+def contains_keyword(text: str, keyword: str) -> bool:
+    """
+    Check whether a keyword appears as a complete word or phrase.
+
+    Word boundaries prevent false matches such as:
+        "app" matching "appears"
+    """
+
+    pattern = r"\b" + re.escape(keyword) + r"\b"
+    return re.search(pattern, text) is not None
 
 
 def classify_customer_message(message: str) -> str:
     """
-    Deterministic baseline classifier.
+    Classify a customer-support message.
 
-    This simulates the behavior of an LLM prompt so that
-    our CI evaluation remains reliable and free of API costs.
+    The rules are deterministic so evaluation results remain
+    reproducible in CI.
     """
 
     text = message.lower()
 
-    
-
+    # ---------------------------------------------------------
+    # Billing
+    # ---------------------------------------------------------
     billing_keywords = [
-    "charged",
-    "charge",
-    "payment",
-    "invoice",
-    "refund",
-    "fee",
-    "billing",
-]
+        "charged",
+        "charge",
+        "payment",
+        "invoice",
+        "refund",
+        "fee",
+        "billing",
+        "billed",
+        "bill",
+        "subscription",
+        "transaction",
+        "receipt",
+        "declined",
+        "invoices",
+    ]
 
+    # ---------------------------------------------------------
+    # Technical
+    # ---------------------------------------------------------
     technical_keywords = [
         "crashes",
         "crash",
@@ -62,8 +79,19 @@ def classify_customer_message(message: str) -> str:
         "freezing",
         "broken",
         "system",
+        "reset link",
+        "does not work",
+        "timing out",
+        "timeout",
+        "unresponsive",
+        "blank screen",
+        "stopped responding",
+        "screen",
     ]
 
+    # ---------------------------------------------------------
+    # Delivery
+    # ---------------------------------------------------------
     delivery_keywords = [
         "package",
         "shipment",
@@ -71,28 +99,67 @@ def classify_customer_message(message: str) -> str:
         "tracking",
         "delivered",
         "delivery",
-        "order is delayed",
-        "arrive",
+        "delayed",
+        "courier",
+        "transit",
+        "tracking number",
     ]
 
+    # ---------------------------------------------------------
+    # Account
+    # ---------------------------------------------------------
     account_keywords = [
         "account",
         "profile",
         "username",
         "account details",
         "email address",
+        "account settings",
+        "account preferences",
     ]
 
-    if any(keyword in text for keyword in billing_keywords):
+    # ---------------------------------------------------------
+    # Classification priority
+    # ---------------------------------------------------------
+
+    # Billing has highest priority because a billing message
+    # can also mention an order.
+    if any(contains_keyword(text, keyword) for keyword in billing_keywords):
         return "Billing"
 
-    if any(keyword in text for keyword in technical_keywords):
+    # Technical is checked next.
+    # Word-boundary matching means "app" matches "app"
+    # but does NOT match the "app" inside "appears".
+    if any(contains_keyword(text, keyword) for keyword in technical_keywords):
         return "Technical"
 
-    if any(keyword in text for keyword in delivery_keywords):
+    # Delivery is checked after billing and technical.
+    if any(contains_keyword(text, keyword) for keyword in delivery_keywords):
         return "Delivery"
 
-    if any(keyword in text for keyword in account_keywords):
+    # Account-related requests.
+    if any(contains_keyword(text, keyword) for keyword in account_keywords):
         return "Account"
 
+    # ---------------------------------------------------------
+    # Generic delivery questions
+    # ---------------------------------------------------------
+
+    if "where is my order" in text:
+        return "Delivery"
+
+    if "when will my order" in text:
+        return "Delivery"
+
+    if (
+        "order" in text
+        and (
+            "arrive" in text
+            or "delivery" in text
+            or "shipping" in text
+        )
+    ):
+        return "Delivery"
+
+    # No matching category.
     return "Unknown"
