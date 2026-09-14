@@ -39,19 +39,17 @@ def classify_customer_message(message: str) -> str:
 
     text = message.lower()
 
-
-    if "refund" in text or "charged" in text or "package" in text:
-      return "Unknown"
     
 
     billing_keywords = [
-        "charged",
-        "charge",
-        "payment",
-        "invoice",
-        "fee",
-        "billing",
-    ]   
+    "charged",
+    "charge",
+    "payment",
+    "invoice",
+    "refund",
+    "fee",
+    "billing",
+]
 
     technical_keywords = [
         "crashes",
